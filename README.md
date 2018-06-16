@@ -7,7 +7,7 @@ cd BeautyPicBot && ./install.sh
 crontab -e
 ```
 
-Chat id you can get by t.me/GetChatBot
+Chat id you can get by https://t.me/GetChatBot [GitHub](https://github.com/StealthTech/GetChatTelegramBot)
 
 And set send by cron. For example this line send image every day in 4:00 UTC:
 ```bash
