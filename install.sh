@@ -28,5 +28,5 @@ unzip -qq pic.zip -d ./in
 echo "Prepare images..."
 ./prepare_image.sh
 echo "Remove trash..."
-rm -rf ./in
+rm -rf ./in pic.zip
 echo "Done!"
