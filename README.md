@@ -11,5 +11,5 @@ Chat id you can get by t.me/GetChatBot
 
 And set send by cron. For example this line send image every day in 4:00 UTC:
 ```bash
-0 4 * * * %your bot path%/send_image.sh
+0 4 * * * cd %your bot path% && ./send_image.sh
 ```
