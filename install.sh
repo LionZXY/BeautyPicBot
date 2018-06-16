@@ -19,7 +19,7 @@ fi
 echo "Enter telegram chat ids:"
 read TELEGRAM_CHAT_ID
 echo "APITOKEN=$APITOKEN" >> bot.conf
-echo "TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID" >> bot.conf
+echo "TELEGRAM_CHAT_ID=($TELEGRAM_CHAT_ID)" >> bot.conf
 
 echo "Download images..."
 wget --output-document=pic.zip https://files.olezh.es/lionzxy/pic.zip
