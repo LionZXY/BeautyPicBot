@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 IMAGECOUNT=-1
@@ -11,11 +10,11 @@ PHOTOJSON=$(curl -s "https://api.unsplash.com/photos/random?client_id=$CLIENT_ID
 
 echo $PHOTOJSON
 
-PHOTOURL=$(echo $PHOTOJSON | jq -r '.urls.raw' | python3 -c "import urllib.parse; print(urllib.parse.quote_plus(input()))")
+PHOTOURL=$(echo $PHOTOJSON | jq -r '.urls.raw')
 
-echo $PHOTOURL
+wget -O tmp ${PHOTOURL}
 
 for chat_id in ${TELEGRAM_CHAT_ID[*]}
 do
-        curl -s "https://api.telegram.org/bot${APITOKEN}/sendPhoto?chat_id=$chat_id&photo=$PHOTOURL"
+        curl -F chat_id="${chat_id}" -F photo=@"tmp" -X POST "https://api.telegram.org/bot${APITOKEN}/sendPhoto"
 done
